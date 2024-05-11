@@ -17,27 +17,27 @@
                     var n = 0;
                     var str = 'WELCOME TO {{ T "nameLarge" | safeHTML }} BLOG';
                     var typeTimer = setInterval(function() {
-                    n = n + 1;
-                    p.innerHTML = str.slice(0, n) + "_";
-                    if (n === str.length) {
-                        clearInterval(typeTimer);
-                        p.innerHTML = str;
-                        n = 0;
-                        p.style.display = "relative";
-                        p.style.left = "0";
-                        p.style.width = "100%";
-                        p.style.textAlign = "center";
-                        setInterval(function() {
-                            if (n === 0) {
-                                p.innerHTML = str + "_";
-                                p.style.paddingRight = "0";
-                                n = 1;
-                            } else {
-                                p.innerHTML = str;
-                                n = 0;
-                            };
-                        }, 500);
-                    };
+                        n = n + 1;
+                        p.innerHTML = str.slice(0, n) + "\u258D";
+                        if (n === str.length) {
+                            clearInterval(typeTimer);
+                            p.innerHTML = str + "&emsp;";
+                            n = 0;
+                            p.style.display = "relative";
+                            p.style.left = "0";
+                            p.style.width = "100%";
+                            p.style.textAlign = "center";
+                            setInterval(function() {
+                                if (n === 0) {
+                                    p.innerHTML = str + "\u258D";
+                                    p.style.paddingRight = "0";
+                                    n = 1;
+                                } else {
+                                    p.innerHTML = str + "&emsp;";
+                                    n = 0;
+                                };
+                            }, 500);
+                        };
                     }, 120)
                 </script>
             </div>
