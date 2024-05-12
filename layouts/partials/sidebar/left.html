@@ -118,23 +118,27 @@
 
                         {{ partial "notify/notify.html" }}
                         <script>
+                            function notificationDisappear() {
+                                console.log("hit")
+                                document.getElementById("notification-area").style.display = "none";
+                            }
                             function clickEvent(event) {
                                 var background = document.getElementById("background-img");
                                 background.style.zIndex = -1;
                                 document.getElementById("background-img").removeEventListener("click", clickEvent);
-                                document.getElementById("notification-area").style.zIndex = -1;
+                                notificationDisappear();
                             }
 
                             var backgroundBtn = document.getElementById("appreciate-background-btn");
                             backgroundBtn.addEventListener("click", function(e) {
                                 var background = document.getElementById("background-img");
                                 background.style.zIndex = 999;
-                                console.log(background, background.style.zIndex);
                                 notifyInfo("Don't worry, click your mouse or press any key and we are back");
                                 document.onkeydown = function(evt) {
                                     evt = evt || window.event;
                                     var background = document.getElementById("background-img");
                                     background.style.zIndex = -1;
+                                    notificationDisappear();
                                 }
                                 document.getElementById("background-img").addEventListener("click", clickEvent);
                             });
