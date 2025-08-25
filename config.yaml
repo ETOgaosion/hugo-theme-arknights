@@ -17,6 +17,7 @@ params:
     featuredImageField: image
     rssFullContent: true
     favicon: /favicon.ico
+    cv: /cv.pdf
 
     footer:
         since:
